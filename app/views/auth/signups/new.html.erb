@@ -1,0 +1,24 @@
+<div class="card-wrapper signup">
+  <h3>Đăng ký</h3>
+  <%= form_for :user, remote: true, url: auth_signups_path() do |f| %>
+    <div class="form_line">
+    <%= f.label "Họ và tên" %>
+    <%= f.text_field :name %>
+    <div class="name-error error">
+    </div>
+    <%= f.label "Email" %>
+    <%= f.text_field :email %>
+    <div class="email-error error"></div>
+    <%= f.label "Số điện thoại" %>
+    <%= f.text_field :phone_number %>
+    <div class="phone-number-error error"></div>
+    <%= f.label "Mật khẩu" %>
+    <%= f.password_field :password %>
+    <div class="password-error error"></div>
+    <%= f.label "Nhập lại mật khẩu" %>
+    <%= f.password_field :password_confirmation %>
+    <div class="confirm-password-error error"></div>
+    <%= f.submit "Tạo tài khoản"%>
+    <div>
+  <% end %>
+</div>
